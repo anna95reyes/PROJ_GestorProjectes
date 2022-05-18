@@ -5,10 +5,20 @@
  */
 package org.milaifontanals.interficie;
 
+import java.util.List;
+import org.milaifontanals.model.Projecte;
+import org.milaifontanals.model.Usuari;
+
 /**
  *
  * @author anna9
  */
 public interface IGestioProjectes {
+    
+    public List<Usuari> getUsuaris();
+    public List<Projecte> getProjectes();
+    void closeCapa();
+    void commit();
+    void rollback();
     
 }
