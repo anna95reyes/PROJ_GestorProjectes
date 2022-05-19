@@ -15,10 +15,10 @@ import org.milaifontanals.model.Usuari;
  */
 public interface IGestioProjectes {
     
-    public List<Usuari> getUsuaris();
-    public List<Projecte> getProjectes();
-    void closeCapa();
-    void commit();
-    void rollback();
+    public List<Usuari> getUsuaris() throws GestioProjectesException;
+    public List<Projecte> getProjectes() throws GestioProjectesException;
+    public void closeCapa() throws GestioProjectesException;
+    public void commit() throws GestioProjectesException;
+    public void rollback() throws GestioProjectesException;
     
 }
