@@ -31,9 +31,11 @@ public interface IGestioProjectes {
     public Projecte getProjecte(int id) throws GestioProjectesException;
     public List<Projecte> getLlistaProjectesAssignats(Usuari usuari) throws GestioProjectesException;
     public List<Projecte> getLlistaProjectesNoAssignats(Usuari usuari) throws GestioProjectesException;
-    public void assignarProjecte(Usuari usuari, Projecte projecte) throws GestioProjectesException;
+    public void assignarProjecte(Usuari usuari, Projecte projecte, Rol rol) throws GestioProjectesException;
     public void desassignarProjecte(Usuari usuari, Projecte projecte) throws GestioProjectesException;
+    public List<Rol> getLlistaRols() throws GestioProjectesException;
     public Rol getRol(int id) throws GestioProjectesException;
+    public Rol getRolAssignat (Usuari usuari, Projecte projecte) throws GestioProjectesException;
     public boolean existeixUsuari(int id) throws GestioProjectesException;
     public boolean existeixProjecte(int id) throws GestioProjectesException;
     public String hashMD5(String input) throws GestioProjectesException;
