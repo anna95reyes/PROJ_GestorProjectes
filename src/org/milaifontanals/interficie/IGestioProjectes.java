@@ -8,6 +8,7 @@ package org.milaifontanals.interficie;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 import java.util.List;
 import org.milaifontanals.model.Projecte;
 import org.milaifontanals.model.Rol;
@@ -39,5 +40,5 @@ public interface IGestioProjectes {
     public boolean existeixUsuari(int id) throws GestioProjectesException;
     public boolean existeixProjecte(int id) throws GestioProjectesException;
     public String hashMD5(String input) throws GestioProjectesException;
-    
+    public String Login(String login, String password) throws GestioProjectesException;
 }
