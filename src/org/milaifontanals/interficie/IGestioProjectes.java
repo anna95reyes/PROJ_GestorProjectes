@@ -10,8 +10,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
+import org.milaifontanals.model.Entrada;
+import org.milaifontanals.model.Estat;
 import org.milaifontanals.model.Projecte;
 import org.milaifontanals.model.Rol;
+import org.milaifontanals.model.Tasca;
 import org.milaifontanals.model.Usuari;
 
 /**
@@ -41,4 +44,16 @@ public interface IGestioProjectes {
     public boolean existeixProjecte(int id) throws GestioProjectesException;
     public String hashMD5(String input) throws GestioProjectesException;
     public String Login(String login, String password) throws GestioProjectesException;
+    public List<Projecte> getLlistaProjectes(String sessionId) throws GestioProjectesException;
+    public List<Tasca> getLlistaTasquesAssignades (String sessionId, Integer idEstat, Integer idProjecte) throws GestioProjectesException;
+    public Estat getEstat(int id) throws GestioProjectesException;
+    public List<Estat> getLlistaEstats (String sessionId) throws GestioProjectesException;
+    public Tasca getTasca (int id) throws GestioProjectesException;
+    public List<Entrada> getLlistaEntrades (String sessionId, Integer idTasca) throws GestioProjectesException;
+    public List<Usuari> getLlistaUsuaris(String sessionId) throws GestioProjectesException;
+    public Entrada getEntrada (int idTasca, int idEntrada) throws GestioProjectesException;
+    public Usuari getUsuari(String sessionId) throws GestioProjectesException;
+    public void afegirEntrada(int idTasca, Entrada entrada) throws GestioProjectesException;
+    public void modificarEntrada(int idTasca, Entrada entrada) throws GestioProjectesException;
+    public Integer nextNumeracioEntrada(Integer idTasca) throws GestioProjectesException;
 }
